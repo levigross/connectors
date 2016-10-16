@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - 1.5
+  - 1.6
+  - 1.7
+  - tip
+
+before_install:
+  - go get -u -v github.com/axw/gocov/gocov
+  - go get -u -v github.com/mattn/goveralls
+  - go get -u -v github.com/golang/lint/golint
+  - go get -u -v github.com/Masterminds/glide
+
+script:
+  - diff -u <(echo -n) <(gofmt -s -d $(glide nv))
+  - diff -u <(echo -n) <(go vet $(glide nv))
+  - diff -u <(echo -n) <(golint $(glide nv))
+  - glide install .
+  - go test -v -race -covermode=atomic -coverprofile=coverage.out
+
+# after_success:
+#   - goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
