@@ -1,0 +1,8 @@
+hash: 8b79d375c6a22a3483642e9ed21541f019076fe27bc6be15429dd4bc43835099
+updated: 2016-10-15T23:11:51.426436288-04:00
+imports:
+- name: github.com/dustin/go-humanize
+  version: bd88f87ad3a420f7bcf05e90566fd1ceb351fa7f
+- name: github.com/levigross/grequests
+  version: e538687ed0543bf7efc251924fd06fb41f1fb193
+devImports: []

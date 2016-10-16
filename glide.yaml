@@ -1,0 +1,4 @@
+package: github.com/levigross/connectors
+import:
+- package: github.com/dustin/go-humanize
+- package: github.com/levigross/grequests
